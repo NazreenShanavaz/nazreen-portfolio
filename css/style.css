@@ -669,3 +669,52 @@ li {
     margin-top: 35px;
 }
 
+/* ===== HERO UPGRADE ===== */
+
+.home-section {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+/* Gradient Name */
+.gradient-name {
+    background: linear-gradient(90deg, #00bfff, #3b82f6, #9333ea);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Subtitle */
+.subtitle {
+    margin: 15px 0;
+    color: #38bdf8;
+}
+
+/* Decorative Glow Background */
+.hero-bg {
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(0,191,255,0.25) 0%, transparent 70%);
+    top: -100px;
+    right: -100px;
+    filter: blur(80px);
+    z-index: -1;
+}
+
+/* Extra subtle left glow */
+.home-section::before {
+    content: "";
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(147,51,234,0.2) 0%, transparent 70%);
+    bottom: -100px;
+    left: -100px;
+    filter: blur(80px);
+    z-index: -1;
+}
