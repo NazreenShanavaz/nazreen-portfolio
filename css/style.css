@@ -236,8 +236,47 @@ p {
 }
 
 .home-content {
-    max-width: 800px;
+    max-width: 1000px;
     z-index: 2;
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    text-align: left;
+}
+
+.home-text {
+    flex: 1;
+}
+
+.hero-avatar {
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25), 0 0 25px rgba(244, 114, 182, 0.2);
+    border: 3px solid rgba(255, 255, 255, 0.08);
+    transition: var(--transition);
+    animation: avatarSlideIn 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+    opacity: 0;
+    flex-shrink: 0;
+}
+
+.hero-avatar:hover {
+    transform: scale(1.05);
+    border-color: rgba(244, 114, 182, 0.4);
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.35), 0 0 35px rgba(192, 132, 252, 0.35);
+}
+
+@keyframes avatarSlideIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.85) translateX(-40px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1) translateX(0);
+    }
 }
 
 .subtitle {
@@ -257,7 +296,7 @@ p {
 .home-buttons {
     display: flex;
     gap: 20px;
-    justify-content: center;
+    justify-content: flex-start;
 }
 
 .hero-bg {
@@ -747,6 +786,17 @@ p {
 
     .nav-links {
         display: none;
+    }
+
+    .home-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+    }
+
+    .hero-avatar {
+        width: 180px;
+        height: 180px;
     }
 
     h1 {
